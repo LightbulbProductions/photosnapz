@@ -1,0 +1,26 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: $lightred;
+  padding: 0 40px;
+  font-family: $title;
+}
+
+.navbar-title {
+  color: $darkblue;
+  font-size: 40px;
+  padding-bottom: 4px;
+}
+
+.nav-links {
+  display: flex;
+  a {
+    color: $darkblue;
+    padding: 18px 26px;
+    height: 23px;
+    font-size: 18px;
+    &:hover{
+      background-color: $mediumred;
+    }
+  }
+}
