@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320113953) do
+ActiveRecord::Schema.define(version: 20180322080854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "photo_id", null: false
+    t.integer "user_id", null: false
+    t.string "text", null: false
+    t.index ["photo_id"], name: "index_comments_on_photo_id"
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer "follower_id", null: false
+    t.integer "followee_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followee_id"], name: "index_follows_on_followee_id"
+    t.index ["follower_id", "followee_id"], name: "index_follows_on_follower_id_and_followee_id", unique: true
+    t.index ["follower_id"], name: "index_follows_on_follower_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "photo_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["photo_id", "user_id"], name: "index_likes_on_photo_id_and_user_id", unique: true
+    t.index ["photo_id"], name: "index_likes_on_photo_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
 
   create_table "photos", force: :cascade do |t|
     t.string "img_url", null: false
@@ -35,6 +62,7 @@ ActiveRecord::Schema.define(version: 20180320113953) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "bio", default: ""
+    t.string "img_url", default: ""
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true

@@ -1,18 +1,17 @@
 import { connect } from 'react-redux';
 
-import { requestPhotos } from '../../actions/photo_actions';
-import PhotosIndex from './photos_index';
+import { postPhoto } from '../../actions/photo_actions';
+import PhotoUpload from './photo_upload';
 
 const mapStateToProps = state => ({
-  photos: state.photos
+
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestPhotos: () => dispatch(requestPhotos())
+  postPhoto: photo => dispatch(postPhoto(photo))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Navbar);
- 
+)(PhotoUpload);

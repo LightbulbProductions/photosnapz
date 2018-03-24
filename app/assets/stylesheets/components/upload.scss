@@ -1,0 +1,45 @@
+.photo-upload-container {
+  width: 300px;
+  margin: 100px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $body;
+}
+
+.photo-upload-button {
+  text-align: center;
+  width: 100px;
+  padding: 24px;
+  background-color: $lightishgray;
+  margin-bottom: 70px;
+  border-radius: 5px;
+  &:hover {
+    background-color: $lightmediumgray;
+  }
+}
+
+.photo-upload-preview {
+  margin-bottom: 40px;
+}
+
+.photo-upload-form input {
+  box-sizing: border-box;
+  background-color: $white;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.photo-upload-submit {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100px;
+  background-color: $lightishgray;
+  text-align: center;
+  margin-top: 16px;
+  border-radius: 5px;
+  &:hover {
+    background-color: $lightmediumgray;
+  }
+}

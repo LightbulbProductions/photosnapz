@@ -1,0 +1,187 @@
+.loading {
+  margin: 35vh auto;
+  font-family: $title;
+  font-size: 50px;
+  width: 200px;
+  text-align: center;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile-header {
+  margin: 70px;
+  display: flex;
+}
+
+.profile-image-container {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.profile-image {
+  width: 230px;
+  position: relative;
+  left: -35px;
+}
+
+.profile-info {
+  margin-left: 60px;
+  height: auto;
+}
+
+.profile-info-sub {
+  font-family: $body;
+}
+
+.profile-username {
+  font-size: 36px;
+}
+
+.profile-follow-button {
+  background-color: $lightishgray;
+  padding: 5px 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-family: $body;
+  font-weight: 700;
+  &:hover {
+    cursor: pointer;
+    background-color: $lightmediumgray;
+  }
+}
+
+.hidden-follow {
+  visibility: hidden;
+}
+
+.profile-hometown {
+  margin: 10px 0;
+  font-size: 20px;
+  &:before {
+    content: "📍 ";
+  }
+}
+
+.profile-bio {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.profile-index {
+  box-sizing: border-box;
+  width: 84vw;
+  min-width: 780px;
+  margin-bottom: 70px;
+}
+
+.profile-index-item {
+  box-sizing: border-box;
+  padding: 15px;
+  width: 28vw;
+  min-width: 260px;
+  display: inline;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+
+
+
+
+
+
+
+.author-photo {
+  width: 80px;
+  position: relative;
+  left: -15px;
+}
+
+.author-photo-mask {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.photo-show-container {
+  font-family: $body;
+  height: 100%;
+}
+
+.photo-show {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+$break-point: 900px;
+
+.show-photo-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $darkblue;
+}
+
+.show-photo {
+  align-self: center;
+  @media screen and (max-width: $break-point) {
+    width: 100%;
+  }
+  @media screen and (min-width: $break-point) {
+    width: 50vw;
+  }
+}
+
+.show-photo-info {
+  width: 25vw;
+  margin: 20px;
+}
+
+.photo-show-label-head {
+  display: flex;
+}
+
+.author-time-labels {
+  margin-top: 10px;
+  margin-left: 14px;
+}
+
+.author-time-labels * {
+  margin: 3px;
+}
+
+.show-interaction-label {
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid $lightmediumgray;
+  width: 100%;
+}
+
+.show-photo-location:before {
+    content: "📍 ";
+}
+
+.photo-show-like-button {
+  font-size: 26px;
+  margin-top: 8px;
+}
+
+.ReactModal__Body--open {
+  overflow-y: hidden;
+}
+
+.photo-show-comments-form {
+  margin-top: 8px;
+}

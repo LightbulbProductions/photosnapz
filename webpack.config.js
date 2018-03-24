@@ -9,14 +9,14 @@ module.exports = {
     filename: "bundle.js"
   },
   resolve: {
-    extensions: [".js", ".jsx", "*"]
+    extensions: [".js", ".jsx", ""]
   },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
         exclude: /(node_modules)/,
-        loader: "babel-loader",
+        loader: "babel",
         query: {
           presets: ["react", "env"]
         }
@@ -25,3 +25,10 @@ module.exports = {
   },
   devtool: "source-maps"
 };
+
+if (process.env.NODE_ENV === 'production') {
+  delete config.devtool;
+  config.plugins = [
+    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' })
+  ];
+}

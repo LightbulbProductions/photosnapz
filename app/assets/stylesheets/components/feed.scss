@@ -1,0 +1,128 @@
+.no-content {
+  margin: 15vh auto;
+  font-family: $title;
+  font-size: 20px;
+  width: 500px;
+  text-align: center;
+}
+
+.no-content-link {
+  font-weight: bold;
+  font-family: $header;
+  &:hover {
+    cursor: pointer;
+    color: $mediumblue;
+  }
+}
+
+.photos-feed-item-container {
+  width: 85vh;
+  margin: 80px auto;
+}
+
+.feed-photo {
+  width: 85vh;
+  padding: 16px 0;
+  background-color: $white;
+}
+
+.photo-head, .photo-foot {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: white;
+  font-family: $body;
+}
+
+.photo-head {
+  border-radius: 5px 5px 0 0;
+  padding-bottom: 5px;
+}
+
+.feed-photo-info {
+  padding: 0 16px;
+  background-color: $white;
+  font-family: $body;
+}
+
+.feed-photo-location {
+  &:before {
+    content: "📍 ";
+  }
+}
+
+.feed-photo-caption {
+  padding-top: 5px;
+}
+
+.photo-foot {
+  border-radius: 0 0 5px 5px;
+}
+
+.author-label {
+  font-weight: bold;
+}
+
+.author-label:hover {
+  cursor: pointer;
+}
+
+
+
+.comments-container {
+  padding-top: 10px;
+  width: 90%;
+}
+
+.comments-container input {
+  width: 100%;
+}
+
+.comment {
+  margin-bottom: 7px;
+  font-size: 14px;
+}
+
+.comment:last-of-type {
+  margin-bottom: 18px;
+}
+
+.comments-form {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.comment-author-username {
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+.comment-author-username:hover {
+  cursor: pointer;
+}
+
+.comment-text {
+  padding-right: 15px;
+}
+
+.comment-delete-button {
+  color: $lightmediumgray;
+}
+
+.comment-delete-button:hover {
+  color: $mediumgray;
+  cursor: pointer;
+}
+
+.like-button {
+  font-size: 24px;
+}
+
+.unliked-color:hover {
+  color: $mediumgray;
+}
+
+.unliked-color {
+  color: $lightmediumgray;
+}

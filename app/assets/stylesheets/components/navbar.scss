@@ -1,26 +1,34 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  background-color: $lightred;
+  background-color: $lightgray;
   padding: 0 40px;
-  font-family: $title;
 }
 
 .navbar-title {
+  font-family: $logo;
+  font-weight: 700;
   color: $darkblue;
-  font-size: 40px;
+  font-size: 54px;
   padding-bottom: 4px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .nav-links {
+  font-family: $title;
   display: flex;
-  a {
+  margin-left: 50px;
+  a, div {
     color: $darkblue;
-    padding: 18px 26px;
+    padding: 24px 16px;
     height: 23px;
     font-size: 18px;
+    font-weight: 700;
     &:hover{
-      background-color: $mediumred;
+      color: $mediumblue;
+      cursor: pointer;
     }
   }
 }

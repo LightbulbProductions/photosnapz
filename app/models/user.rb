@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 
+
 	attr_reader :password
 
 	validates :username, :email, :password_digest, :session_token, presence: true
@@ -9,7 +10,34 @@ class User < ActiveRecord::Base
 	after_initialize :ensure_session_token
 	before_validation :ensure_session_token_uniqueness
 
-	has_many :stories, foreign_key: :author_id
+	has_many :photos, foreign_key: :author_id
+
+  has_many :likes,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Like
+
+  has_many :liked_photos,
+    through: :likes,
+    source: :photo
+
+	has_many :in_follows,
+		primary_key: :id,
+		foreign_key: :followee_id,
+		class_name: :Follow
+
+	has_many :followers,
+		through: :in_follows,
+		source: :follower
+
+	has_many :out_follows,
+		primary_key: :id,
+		foreign_key: :follower_id,
+		class_name: :Follow
+
+	has_many :followees,
+		through: :out_follows,
+		source: :followee
 
 	def password= password
 		self.password_digest = BCrypt::Password.create(password)
@@ -33,6 +61,14 @@ class User < ActiveRecord::Base
 		self.session_token
 	end
 
+	def follower_ids
+		Follow.where(followee_id: self.id).pluck(:follower_id)
+	end
+
+	def num_followees
+		self.followees.count
+	end
+	
 	private
 
 	def ensure_session_token

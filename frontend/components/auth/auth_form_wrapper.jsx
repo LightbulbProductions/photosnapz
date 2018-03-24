@@ -23,18 +23,22 @@ class AuthFormWrapper extends React.Component {
 
   render() {
     return (
-      <div>
-        <div onClick={this.toggleFormType('login')} >LOG IN</div>
-        <div onClick={this.toggleFormType('signup')} >SIGN UP</div>
+      <div className='auth-form-wrapper'>
+        <div className='auth-form-links'>
+          <div className={`auth-form-link ${this.state.formType === 'login' ? 'active-form' : 'inactive-form'}`} onClick={this.toggleFormType('login')} >Log In</div>
+          <div className={`auth-form-link ${this.state.formType === 'signup' ? 'active-form' : 'inactive-form'}`} onClick={this.toggleFormType('signup')} >Sign Up</div>
+        </div>
         {this.state.formType === 'signup' ?
           <UserForm
             processForm={this.props.processForm}
             closeSessionModal={this.props.closeSessionModal}
-            currentUser={this.props.currentUser} /> :
+            currentUser={this.props.currentUser}
+            errors={this.props.errors} /> :
           <SessionForm
             processForm={this.props.processForm}
             closeSessionModal={this.props.closeSessionModal}
-            currentUser={this.props.currentUser} />}
+            currentUser={this.props.currentUser}
+            errors={this.props.errors} />}
       </div>
     );
   }
